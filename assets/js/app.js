@@ -16,10 +16,31 @@ const crearDeck = () => {
         }
     }
 
+    console.log(deck);
     deck = _.shuffle(deck);
-
+    console.log(deck);
+    
     return deck;
 }
 
 
 crearDeck()
+
+// esta funcion me permite tomar una carta
+const pedirCarta = () => {
+    if(deck.length === 0){
+        throw "No hay cartas en el deck";
+    }
+    const carta = deck.pop();
+    return carta;
+}
+
+const valorCarta = (carta) => {
+    const valor = carta.substring(0, carta.length - 1);
+    return (isNaN(valor)) ? 
+            (valor === 'A') ? 11 : 10
+            : valor * 1;
+}
+
+const valor = valorCarta(pedirCarta());
+console.log({valor});
