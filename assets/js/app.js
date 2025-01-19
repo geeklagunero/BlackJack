@@ -55,4 +55,6 @@ btnPedir.addEventListener('click', () => {
     puntosJugador = puntosJugador + valorCarta(carta);
     puntosHTML[0].innerText = puntosJugador;
 
+    
+
 });
